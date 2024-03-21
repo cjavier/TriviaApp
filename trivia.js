@@ -13,13 +13,12 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function iniciarTrivia() {
-    var dificultad = $('#dificultad').val() || ""; // Usa "" si el valor es undefined
-    var tipo = $('#tipo').val() || ""; // Usa "" si el valor es undefined
-    var categoria = $('#categoria').val() || ""; // Usa "" si el valor es undefined
+    var dificultad = $('#dificultad').val() || "";
+    var tipo = $('#tipo').val() || ""; 
+    var categoria = $('#categoria').val() || ""; 
     var url = `https://opentdb.com/api.php?amount=10&category=${categoria}&difficulty=${dificultad}&type=${tipo}`;
     console.log(url); 
     localStorage.setItem('triviaURL', url);
-    // Redirige a trivia.html
     window.location.href = 'trivia.html';
 }
 function reiniciarTrivia() {
@@ -28,7 +27,7 @@ function reiniciarTrivia() {
 
 document.addEventListener('DOMContentLoaded', function() {
     var url = localStorage.getItem('triviaURL');
-    let score = 0; // Inicializa el puntaje
+    let score = 0; 
 
     fetch(url)
         .then(response => response.json())
@@ -54,8 +53,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 button.addEventListener('click', function() {
                     if (this.classList.contains('correct')) {
                         alert('Respuesta Correcta!');
-                        score += 100; // Añade 100 puntos por cada respuesta correcta
-                        document.getElementById('score').textContent = score; // Actualiza el puntaje en la página
+                        score += 100; 
+                        document.getElementById('score').textContent = score; 
                     } else {
                         alert('Respuesta Incorrecta.');
                     }
