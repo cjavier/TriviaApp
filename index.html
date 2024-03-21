@@ -1,16 +1,45 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-    <title>Mi Formulario en GitHub Pages</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de Trivia</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
-    <h1>Formulario de Contacto</h1>
-    <form action="URL_A_DONDE_ENVIAR_FORMULARIO" method="POST">
-        <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre" name="nombre"><br><br>
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email"><br><br>
-        <input type="submit" value="Enviar">
+
+<div class="container">
+    <h1 class="mt-5">Bienvenido a la Trivia</h1>
+    <form id="triviaForm">
+        <div class="form-group">
+            <label for="difficulty">Dificultad</label>
+            <select class="form-control" id="difficulty">
+                <option value="">Cualquiera</option>
+                <option value="easy">Fácil</option>
+                <option value="medium">Media</option>
+                <option value="hard">Difícil</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="type">Tipo de Respuesta</label>
+            <select class="form-control" id="type">
+                <option value="">Cualquiera</option>
+                <option value="multiple">Opción Múltiple</option>
+                <option value="boolean">Verdadero o Falso</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="category">Categoría</label>
+            <select class="form-control" id="category">
+                <!-- Opciones de categoría generadas dinámicamente -->
+            </select>
+        </div>
+        <button type="button" class="btn btn-primary" id="enviar" onclick="iniciarTrivia()">Iniciar Trivia</button>
     </form>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script src="trivia.js"></script>
 </body>
 </html>
